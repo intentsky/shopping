@@ -1,0 +1,17 @@
+# Intentsky Shopping — this folder is also published on its own
+# (github.com/intentsky/shopping), so it carries its own ignore rules.
+node_modules
+.medusa
+dist
+.env
+.env.*
+!.env.example
+static
+uploads
+.turbo
+*.log
+*.tsbuildinfo
+.DS_Store
+
+# The Intentsky monorepo ignores every *.md; the template ships its docs.
+!*.md

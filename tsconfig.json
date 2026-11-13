@@ -1,0 +1,41 @@
+{
+	"compilerOptions": {
+		"target": "ES2022",
+		"module": "NodeNext",
+		"moduleResolution": "NodeNext",
+		"lib": ["ES2022", "DOM"],
+		"strict": true,
+		"strictNullChecks": true,
+		"noUncheckedIndexedAccess": true,
+		"exactOptionalPropertyTypes": false,
+		"skipLibCheck": true,
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"resolveJsonModule": true,
+		"declaration": true,
+		"declarationMap": true,
+		"sourceMap": true,
+		"outDir": "./.medusa/server",
+		"rootDir": "./",
+		// No "baseUrl": it is deprecated as of TypeScript 6.0 (TS5101) and the
+		// root workspace resolves tsc 6.x, which fails `medusa build` on it.
+		// Nothing here imports baseUrl-relative, and "paths" patterns resolve
+		// against this file's directory without it (TS >= 4.1).
+		"paths": {
+			"~/*": ["./src/*"]
+		},
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"useDefineForClassFields": false,
+		"jsx": "react-jsx"
+	},
+	"ts-node": {
+		"transpileOnly": true,
+		"compilerOptions": {
+			"module": "CommonJS",
+			"moduleResolution": "node"
+		}
+	},
+	"include": ["./src/**/*.ts", "./src/**/*.tsx", "./medusa-config.ts"],
+	"exclude": ["node_modules", ".medusa", "dist", "uploads"]
+}

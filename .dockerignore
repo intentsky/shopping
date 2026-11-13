@@ -1,0 +1,11 @@
+node_modules
+.medusa
+.env
+.env.*
+!.env.example
+static
+uploads
+.git
+.turbo
+*.md
+*.log
