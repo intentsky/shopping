@@ -28,7 +28,7 @@ The template creates three services and a volume:
 
 | Service | Source | Notes |
 |---|---|---|
-| `shopping` | this repo (Dockerfile) | Medusa API + admin at `/app`, health at `/health`, port 9000 |
+| `shopping` | this repo (Dockerfile) | Medusa API + admin at `/app`, health at `/health`, port 9000; `/` sends browsers to the admin |
 | `Postgres` | Railway Postgres | `DATABASE_URL` is wired automatically |
 | `Redis` | Railway Redis | `REDIS_URL` is wired automatically (`?family=0` for the IPv6 private network) |
 | volume | mounted at `/app/.medusa/server/static` | uploaded media, unless `S3_*` is set |
@@ -146,7 +146,7 @@ npx medusa db:migrate && npx medusa start
 | `src/api/intentsky/handshake`, `src/api/intentsky/publishable-key` | Intentsky connection (HMAC over the connect token) |
 | `src/lib/intentsky.ts`, `src/lib/intentsky-sync.ts` | Connection config, signing, registration, storefront key |
 | `src/scripts/bootstrap.ts`, `src/jobs/intentsky-heartbeat.ts` | Boot-time setup; 6-hourly re-registration |
-| `src/api/health` | `GET /health` for Railway's healthcheck |
+| `src/api/health`, `src/api/route.ts` | `GET /health` for Railway's healthcheck; `GET /` → admin for browsers, a JSON card otherwise |
 | `Dockerfile`, `start.sh` | Two-stage build; migrations → admin user → bootstrap → server |
 
 ## For template maintainers

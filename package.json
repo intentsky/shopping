@@ -1,6 +1,6 @@
 {
 	"name": "intentsky-shopping",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"private": true,
 	"license": "MIT",
 	"description": "Intentsky Shopping — a Medusa v2 commerce engine with quote requests (RFQ), Stripe, Resend email, S3/R2 media and a one-step connection to an Intentsky Project. Ready to deploy on Railway.",

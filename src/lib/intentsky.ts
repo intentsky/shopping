@@ -27,7 +27,7 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
 
 /** Version of this template, reported to Intentsky at registration. */
-export const TEMPLATE_VERSION = "1.0.0";
+export const TEMPLATE_VERSION = "1.0.1";
 
 /** A signed request older (or newer) than this is refused. */
 export const SIGNATURE_WINDOW_MS = 5 * 60_000;
